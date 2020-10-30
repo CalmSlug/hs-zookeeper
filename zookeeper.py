@@ -35,10 +35,10 @@ WMMm__,-'.'     /      _.\      F'''-+,,   ;_,_.dMMMMMMMM[,_ / `=_}
           /  .'             /  (       .'  /     Ww._     `.  `"
          /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
         (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
-The lion is croaking!"""
+The lion is hunting!"""
 
 deer = r"""
-Switching on camera from habitat with deers...
+Switching on camera from habitat with deer...
    /|       |\
 `__\\       //__'
    ||      ||
@@ -63,10 +63,10 @@ Switching on camera from habitat with deers...
            | || |           | |   | |
            |_||_|           |_|   |_|
           /_//_/           /_/   /_/
-Our 'Bambi' looks hungry. Let's go to feed it!"""
+Our 'Bambi' looks hungry. Let's go feed it!"""
 
 goose = r"""
-Switching on camera from habitat with lovely goose...
+Switching on camera from habitat with geese...
 
                                     _
                                 ,-"" "".
@@ -120,12 +120,29 @@ Switching on camera from habitat with rabbits...
 It seems there will be more rabbits soon!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
+valid_input = ["0", "1", "2", "3", "4", "5", "exit"]
+
+print("Welcome to our Zoo!")
 
 while True:
-   user_input = input('Which habitat # do you need? ')
-   if user_input != 'exit':
-      camera = int(user_input)
-      print(animals[camera])
-   if user_input == 'exit':
-      print('See you!')
-      break
+    print()
+    print("Available habitats:")
+    print("0 - camels, 1 - lions, 2 - deer,")
+    print("3 - geese, 4 - bats, 5 - rabbits.")
+    user_input = input("Type habitat # to proceed or type 'exit' to leave: ")
+    
+    if user_input in valid_input:
+        
+        if user_input == "exit":
+            print()
+            print("See you!")
+            break
+        
+        else:
+            habitat = int(user_input)
+            print(animals[habitat])
+    
+    else:
+        print()
+        print("Please, enter valid input:")
+        print(valid_input)
