@@ -120,15 +120,15 @@ Switching on camera from habitat with rabbits...
 It seems there will be more rabbits soon!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
-valid_input = ["0", "1", "2", "3", "4", "5", "exit"]
+valid_input = ["1", "2", "3", "4", "5", "6", "exit"]
 
 print("Welcome to our Zoo!")
 
 while True:
     print()
     print("Available habitats:")
-    print("0 - camels, 1 - lions, 2 - deer,")
-    print("3 - geese, 4 - bats, 5 - rabbits.")
+    print("1 - camels, 2 - lions, 3 - deer,")
+    print("4 - geese, 5 - bats, 6 - rabbits.")
     user_input = input("Type habitat # to proceed or type 'exit' to leave: ")
     
     if user_input in valid_input:
@@ -139,7 +139,7 @@ while True:
             break
         
         else:
-            habitat = int(user_input)
+            habitat = int(user_input) - 1
             print(animals[habitat])
     
     else:
